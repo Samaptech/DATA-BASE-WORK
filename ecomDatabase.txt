@@ -1,0 +1,38 @@
+create table product(
+id int PRIMARY KEY AUTO_INCREMENT,
+    product_name varchar(30) not null,
+    price decimal(10,2) not null,
+    quantity int,
+    description varchar(200)
+)
+
+create table category(
+id int PRIMARY KEY AUTO_INCREMENT,
+    category_name varchar(30),
+    description varchar(250)
+
+)
+
+alter table product add COLUMN category_id int 
+
+alter table product add FOREIGN key(category_id) REFERENCES category(id)
+
+
+create table brand(
+id int PRIMARY key AUTO_INCREMENT,
+    brand_name varchar(30),
+    brand_origin varchar(50),
+    description varchar(300)
+
+
+)
+
+
+
+
+INSERT INTO `product`( `product_name`, `price`, `quantity`, `description`, `category_id`, `brand_id`)
+VALUES ("S23 ultra",200000,10,"S23 ultra mobile phone is thasf",1,1),
+("abc Lenovo s2",10000,15,"Lenovoo ohoasbreas",1,2),
+("Lattitude 86g",451254,8,"laptopashva sh aab",2,2),
+("macbook 18",250000,7,"Macbooko is the a klasd",2,3),
+("airpod",200100,4," ultasjfjkashf",3,3)
